@@ -69,4 +69,64 @@ function menuBtnChange() {
  }else {
    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
  }
+
+}
+
+
+
+// Record Voice
+function startRecording() {    
+
+  var lang = prompt("Ingrese el código del idioma (ejemplo: en-US para inglés, es-ES para español):");
+  var recognition = new webkitSpeechRecognition(); // Crear una instancia del objeto de reconocimiento de voz
+
+  recognition.lang = lang; // Establecer el idioma del reconocimiento (en este caso, español)
+  recognition.start(); // Iniciar la grabación de voz
+
+  recognition.onresult = function(event) {
+      alert("Microphone Disabled");
+      var message = event.results[0][0].transcript; // Obtener el texto convertido de la grabación
+      if (message) {
+          // Agrega la pregunta del usuario al chat
+          addMessageToChat(message, 'question');
+     
+    
+          fetch("/", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ message }),
+          })
+              .then((response) => response.json())
+              .then((data) => {
+                  const botAnswer = data.reply;
+                  addMessageToChat(botAnswer, 'answer');
+       
+              });
+    
+  recognition.onerror = function(event) {
+      alert("There was an error. Try Again.");
+      console.error('Error al reconocer la voz: ' + event.error);
+  }
+}
+
+}
+
+function addMessageToChat(message, messageType) {
+  const chatOutput = document.getElementById('chat-output');
+
+  const messageContainer = document.createElement('div');
+  messageContainer.classList.add('message-container');
+
+  const messageElement = document.createElement('div');
+  const h1Element = document.createElement('p');
+  messageElement.classList.add(messageType);
+  h1Element.textContent = message;
+  messageElement.appendChild(h1Element);
+
+  messageContainer.appendChild(messageElement);
+  chatOutput.appendChild(messageContainer);
+  chatOutput.scrollTop = chatOutput.scrollHeight
+}
 }

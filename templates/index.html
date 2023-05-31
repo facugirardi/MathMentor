@@ -67,6 +67,13 @@
        </a>
        <span class="tooltip">Settings</span>
      </li>
+     <li>
+      <a href="#">
+        <i class='bx bx-help-circle' ></i>
+        <span class="links_name">Help</span>
+      </a>
+      <span class="tooltip">Help</span>
+    </li>
      <li class="profile">
          <div class="profile-details">
            <img src="../static/img/azu-blue.png" alt="profileImg">
@@ -84,7 +91,7 @@
            <div id="chat-container">
                <div class="main-content">
                        <div class="log">
-                         <a href="index.html">
+                         <a href="#">
                            <img src="../static/img/azu-blue.png" alt="Log">
                          </a>
                        </div>
@@ -94,6 +101,7 @@
                    <form id="chat-input-container">
                        <input id="chat-input" type="text" placeholder="Type your message...">
                        <button id="chat-submit" type="submit">Send</button>
+                       <button id="chat-submit" onclick="startRecording()"><i class='bx bx-microphone'></i></button>
                    </form>
                </div>
            </div>
