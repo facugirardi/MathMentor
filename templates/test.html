@@ -1,0 +1,40 @@
+<html>
+<head>
+  <style>
+    #container {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      overflow: auto;
+    }
+    
+    #content {
+      height: 100%;
+      width: calc(100% - 17px); /* Ajuste para compensar el ancho de la barra de desplazamiento */
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="content"></div>
+  </div>
+
+  <script>
+    function addElement() {
+      var content = document.getElementById("content");
+      var newElement = document.createElement("div");
+      newElement.innerText = "Nuevo elemento";
+      content.appendChild(newElement);
+    }
+
+    function simulateDelayedAddition() {
+      setTimeout(function() {
+        addElement();
+        simulateDelayedAddition();
+      }, 1000); // Retraso de 2 segundos
+    }
+
+    simulateDelayedAddition();
+  </script>
+</body>
+</html>

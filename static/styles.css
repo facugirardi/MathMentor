@@ -43,22 +43,22 @@ body {
  
  #chat-output {
     width: 120%;
-    height: 55%;
+    height: 55vh;
     border-radius: 10px;
     border: 2px solid #ccc;
     padding: 10px;
     background-color: #ECECEC;
     margin-bottom: 20px;
     flex-direction: column;
-    overflow: auto;
+    overflow-y: scroll;
     scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
 #chat-output::-webkit-scrollbar {
  width: 0;
  height: 0;
 }
+
 
  
  .message-container {
