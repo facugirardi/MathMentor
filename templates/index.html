@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Botmath</title>
    <link rel="stylesheet" href="../static/styles.css">
    <script src="../static/script.js" defer></script>
+   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-   <div class="chat-container">
-       <h1 class="title">Botmath</h1>
-       <div id="chat-output"></div>
-       <input id="chat-input" type="text" placeholder="Type your message...">
-   </div>
+  <div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">MathMentor</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="index.html">
+          <i class='bx bx-bot'></i>
+          <span class="links_name">ChatBot</span>
+        </a>
+         <span class="tooltip">ChatBot</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-line-chart' ></i>         
+        <span class="links_name">Graphs</span>
+       </a>
+       <span class="tooltip">Graphs</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Subscription</span>
+       </a>
+       <span class="tooltip">Subscription</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-library' ></i>
+         <span class="links_name">Resources</span>
+       </a>
+       <span class="tooltip">Resources</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Settings</span>
+       </a>
+       <span class="tooltip">Settings</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="../static/img/azu-blue.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Math Mentor</div>
+             <div class="job">Math Bot</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+
+       <div class="Chat">
+           <div id="chat-container">
+               <div class="main-content">
+                       <div class="log">
+                         <a href="index.html">
+                           <img src="../static/img/azu-blue.png" alt="Log">
+                         </a>
+                       </div>
+                   <h1 class="title">MathMentor</h1>
+                   <div class="Chat"> </div>
+                   <div id="chat-output"></div>
+                   <form id="chat-input-container">
+                       <input id="chat-input" type="text" placeholder="Type your message...">
+                       <button id="chat-submit" type="submit">Send</button>
+                   </form>
+               </div>
+           </div>
 </body>
+
 </html>
