@@ -1,15 +1,13 @@
 from flask import Flask, request, jsonify, render_template
 import openai
-import shap
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-openai.api_key = 'pk-chOPDhlMdmAKqeGOeeMyOyMQqQLyIDRcgjKYzhHbWlmIuttK'
-openai.api_base = 'https://api.pawan.krd/v1'
+openai.api_key = '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'
 
 conv_history = [{"role" : "system",
-     "content" : "Tu nombre es MathBot, sos un profesor de matematica virtual. No podes usar markdown. Solo podes hablar de cosas relacionadas a la matematica, por nada en el mundo hables de otras cosas que no tengan que ver con la matematica. Siempre que te pregunten algo, explicalo con pasos ennumerados y en una nueva linea cada uno para resolverlo y consulta si necesita mas explicacion. Siempre explica de una forma sencilla y SIEMPRE con un maximo de 100 palabras, NUNCA digas la longitud de tus respuestas. Si tu mensaje es muy largo, se va a cortar, si eso pasa, pidele al usuario que diga Continuar Mensaje. Vas a responder en el idioma en el que te pregunten, si te hacen la pregunta en un idioma, vos respondes en el mismo, nunca hables solo un idioma. Recorda siempre los mensajes anteriores. Y acordate del nombre del usuario si es que te lo dice. Tenes PROHIBIDO USAR MARKDOWN."}]
+"content" : "Tu nombre es MathBot, sos un profesor de matematica virtual."}, {"role" : "system", "content" : "No podes usar markdown. Tenes PROHIBIDO USAR MARKDOWN"}, {"role" : "system", "content" : "Solo podes hablar de cosas relacionadas a la matematica, por nada en el mundo hables de otras cosas que no tengan que ver con la matematica."}, {"role" : "system", "content" : "Siempre explica de una forma entendible y sencilla."}, {"role" : "system", "content" : "Recorda siempre los mensajes anteriores. Y acordate del nombre del usuario si es que te lo dice."},{"role" : "system", "content" : "Vas a responder en el idioma en el que te pregunten, si te hacen la pregunta en un idioma, vos respondes en el mismo, nunca hables solo un idioma."}]
 
 @app.route('/')
 def index():
@@ -25,7 +23,7 @@ def chat():
     conv_history.append({"role":"user", "content":message})
     
     response = openai.ChatCompletion.create(
-        model = "gpt-3.5-turbo", messages=conv_history
+        model = "gpt-3.5-turbo", messages=conv_history, temperature=0, max_tokens=150
     )
 
     response_content = response['choices'][0]['message']['content']
