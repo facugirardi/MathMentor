@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template
 import openai
-import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
