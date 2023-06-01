@@ -28,9 +28,17 @@ def chat():
 
     response_content = response['choices'][0]['message']['content']
     
-    conv_history.append({"role":"assistant", "content": response_content})
-            
-    return jsonify({'reply': response_content})
+    if not response_content.endswith((".", "?", "!", "…")):
+        conv_history.append({"role":"user", "content":'Continua con tu mensaje. Pero con un maximo de 100 palabras mas.'})
+        response = openai.ChatCompletion.create(model = "gpt-3.5-turbo", messages=conv_history)
+        response_content2 = response['choices'][0]['message']['content']
+        f_response = response_content+response_content2
+        
+        conv_history.append({"role":"assistant", "content": response_content2})
+        return jsonify({'reply': f_response})
+    else:
+        conv_history.append({"role":"assistant", "content": response_content})
+        return jsonify({'reply': response_content})
 
 if __name__ == '__main__':
     app.run()
