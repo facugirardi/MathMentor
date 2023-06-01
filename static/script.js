@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addMessageToChat(message, messageType) {
         const messageContainer = document.createElement('div');
         messageContainer.classList.add('message-container');
- 
+
         const messageElement = document.createElement('div');
         const h1Element = document.createElement('p');
         messageElement.classList.add(messageType);
@@ -16,15 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
         messageContainer.appendChild(messageElement);
         chatOutput.appendChild(messageContainer);
         chatOutput.scrollTop = chatOutput.scrollHeight}
- 
+    
+    function disableBtn(){
+        if(chatInput.value != ""){
+        const button = document.getElementById('chat-submit');
+        const button2 = document.getElementById('chat-submit2');
+
+        button.classList.add("disabled");
+        button2.classList.add("disabled");}
+
+    }
+
+    function enableBtn(){
+        const button = document.getElementById('chat-submit');
+        const button2 = document.getElementById('chat-submit2');
+
+        button.classList.remove("disabled");
+        button2.classList.remove("disabled");
+
+    }
+
     chatForm.addEventListener('submit', async (event) => {
+        disableBtn()
         event.preventDefault();
         const message = chatInput.value.trim();
         if (message) {
             // Agrega la pregunta del usuario al chat
             addMessageToChat(message, 'question');
-       
- 
             fetch("/", {
                 method: "POST",
                 headers: {
@@ -36,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then((data) => {
                     const botAnswer = data.reply;
                     addMessageToChat(botAnswer, 'answer');
-         
+                    enableBtn()
                 });
- 
+            
             chatInput.value = '';
         }
     });

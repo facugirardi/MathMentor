@@ -6,7 +6,12 @@ body {
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
  }
-     
+
+.disabled {
+  background-color: #9DB2BF !important; /* Cambia el color a uno más claro */
+  cursor: not-allowed !important; /* Cambia el cursor al estilo "no permitido" */
+}
+
  .main-content {
     display: flex;
     flex-direction: column;
@@ -114,6 +119,17 @@ body {
     padding: 5px 10px;
     margin-right: 5px;
     cursor: pointer;}
+
+  #chat-submit2 {
+    border-radius: 40px;
+    background-color: #1d1b31;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;}
+  
  /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
