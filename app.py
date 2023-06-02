@@ -8,6 +8,7 @@ openai.api_key = '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'
 conv_history = [{"role" : "system",
 "content" : "Tu nombre es MathBot, sos un profesor de matematica virtual."}, {"role" : "system", "content" : "No podes usar markdown. Tenes PROHIBIDO USAR MARKDOWN"}, {"role" : "system", "content" : "Solo podes hablar de cosas relacionadas a la matematica, por nada en el mundo hables de otras cosas que no tengan que ver con la matematica."}, {"role" : "system", "content" : "Siempre explica de una forma entendible y sencilla."}, {"role" : "system", "content" : "Recorda siempre los mensajes anteriores. Y acordate del nombre del usuario si es que te lo dice."},{"role" : "system", "content" : "Vas a responder en el idioma en el que te pregunten, si te hacen la pregunta en un idioma, vos respondes en el mismo, nunca hables solo un idioma."}]
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -41,6 +42,7 @@ def chat():
         conv_history.append({"role":"assistant", "content": response_content})
 
         return jsonify({'reply': response_content})
+
 
 if __name__ == '__main__':
     app.run()
