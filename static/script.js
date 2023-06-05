@@ -114,6 +114,8 @@ function startRecording() {
   recognition.start(); // Iniciar la grabación de voz
   
   recMic()
+  disableBtn()
+
   recognition.onresult = function(event) {
       alert("Microphone Disabled");
       var message = event.results[0][0].transcript; // Obtener el texto convertido de la grabación
@@ -136,6 +138,7 @@ function startRecording() {
        
               });
         notRec()
+        enableBtn()
   recognition.onerror = function(event) {
       alert("There was an error. Try Again.");
       console.error('Error al reconocer la voz: ' + event.error);

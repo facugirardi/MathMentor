@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
     background-color: #f0f0f0;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
                       linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
- }
+    font-family: 'Poppins', sans-serif;
+   }
 
 .disabled {
   background-color: #9DB2BF !important; /* Cambia el color a uno más claro */
@@ -170,7 +172,7 @@ body {
 }
 .sidebar .logo-details .logo_name{
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   opacity: 0;
   transition: all 0.5s ease;
@@ -184,9 +186,9 @@ body {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-size: 22px;
+  font-size: 20px;
   transition: all 0.4s ease;
-  font-size: 23px;
+  font-size: 21px;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -198,7 +200,7 @@ body {
   color: #fff;
   height: 60px;
   min-width: 50px;
-  font-size: 28px;
+  font-size: 26px;
   text-align: center;
   line-height: 60px;
 }
@@ -220,7 +222,7 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 15px;
+  font-size: 13spx;
   font-weight: 400;
   opacity: 0;
   white-space: nowrap;
@@ -238,7 +240,7 @@ body {
   display: none;
 }
 .sidebar input{
-  font-size: 15px;
+  font-size: 13px;
   color: #FFF;
   font-weight: 400;
   outline: none;
@@ -259,7 +261,7 @@ body {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  font-size: 22px;
+  font-size: 20px;
   background: #1d1b31;
   color: #FFF;
 }
@@ -286,7 +288,7 @@ body {
 }
 .sidebar li a .links_name{
   color: #fff;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   white-space: nowrap;
   opacity: 0;
@@ -305,7 +307,7 @@ body {
 .sidebar li i{
   height: 50px;
   line-height: 50px;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 12px;
 }
 .sidebar li.profile{
@@ -336,13 +338,13 @@ body {
 }
 .sidebar li.profile .name,
 .sidebar li.profile .job{
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: #fff;
   white-space: nowrap;
 }
 .sidebar li.profile .job{
-  font-size: 12px;
+  font-size: 10px;
 }
 .sidebar .profile #log_out{
   position: absolute;
@@ -377,7 +379,7 @@ body {
 .home-section .text{
   display: inline-block;
   color: #11101d;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 500;
   margin: 18px
 }
