@@ -90,6 +90,18 @@ function menuBtnChange() {
 
 }
 
+function recMic(){
+    const button = document.getElementById('chat-submit2');
+
+    button.classList.add("mic-recording");
+
+}
+
+function notRec(){
+    const button = document.getElementById('chat-submit2');
+
+    button.classList.remove("mic-recording");
+}
 
 
 // Record Voice
@@ -100,7 +112,8 @@ function startRecording() {
 
   recognition.lang = lang; // Establecer el idioma del reconocimiento (en este caso, español)
   recognition.start(); // Iniciar la grabación de voz
-
+  
+  recMic()
   recognition.onresult = function(event) {
       alert("Microphone Disabled");
       var message = event.results[0][0].transcript; // Obtener el texto convertido de la grabación
@@ -122,7 +135,7 @@ function startRecording() {
                   addMessageToChat(botAnswer, 'answer');
        
               });
-    
+        notRec()
   recognition.onerror = function(event) {
       alert("There was an error. Try Again.");
       console.error('Error al reconocer la voz: ' + event.error);

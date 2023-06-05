@@ -129,6 +129,12 @@ body {
     padding: 5px 10px;
     margin-right: 5px;
     cursor: pointer;}
+
+
+.mic-recording{
+  background-color: #970f0f !important;
+
+}
   
  /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
