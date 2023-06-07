@@ -92,29 +92,31 @@ function menuBtnChange() {
 
 function recMic(){
     const button = document.getElementById('chat-submit2');
+    const button2 = document.getElementById('chat-submit');
 
     button.classList.add("mic-recording");
-
+    button.classList.add("disabled");
+    button2.classList.add("disabled");
 }
 
 function notRec(){
     const button = document.getElementById('chat-submit2');
+    const button2 = document.getElementById('chat-submit');
 
     button.classList.remove("mic-recording");
+    button.classList.remove("disabled");
+    button2.classList.remove("disabled");
 }
-
 
 // Record Voice
 function startRecording() {    
 
-  var lang = prompt("Ingrese el código del idioma (ejemplo: en-US para inglés, es-ES para español):");
   var recognition = new webkitSpeechRecognition(); // Crear una instancia del objeto de reconocimiento de voz
 
-  recognition.lang = lang; // Establecer el idioma del reconocimiento (en este caso, español)
+  recognition.lang = 'es-ES'; // Establecer el idioma del reconocimiento (en este caso, español)
   recognition.start(); // Iniciar la grabación de voz
   
   recMic()
-  disableBtn()
 
   recognition.onresult = function(event) {
       alert("Microphone Disabled");
@@ -138,7 +140,6 @@ function startRecording() {
        
               });
         notRec()
-        enableBtn()
   recognition.onerror = function(event) {
       alert("There was an error. Try Again.");
       console.error('Error al reconocer la voz: ' + event.error);
