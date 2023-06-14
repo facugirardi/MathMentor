@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/graphs')
-def index2():
+def graph_index():
     return render_template('graphs.html')
 
 @app.route('/', methods=['POST'])
