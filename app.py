@@ -13,6 +13,9 @@ conv_history = [{"role" : "system",
 def index():
     return render_template('index.html')
 
+@app.route('/graphs')
+def index():
+    return render_template('graphs.html')
 
 @app.route('/', methods=['POST'])
 def chat():
