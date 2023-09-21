@@ -22,7 +22,7 @@ def chat():
     data = request.get_json()
     message = data['message']
     
-
+    
     conv_history.append({"role":"user", "content":message})
     
     response = openai.ChatCompletion.create(
