@@ -6,7 +6,3 @@ MathMentor is an intelligent mathematics teacher, harnessing the power of artifi
 
 ## Screenshots
 ![Captura de pantalla 2023-06-05 000452](https://github.com/facugirardi/MathGPT/assets/82075452/c4007597-0b24-4c8c-ba0b-325eb32f0060)
-
-
-## Developer
-Developed by Facundo Girardi.
